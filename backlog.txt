@@ -1,0 +1,47 @@
+ Administrator on DESKTOP-ABOBA at …\axum_crud_rest via  master
+   psql -U postgres -h localhost -p 4200 -W
+Password:
+psql (17.0)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# CREATE ROLE axum_postgres WITH LOGIN PASSWORD 'axum_postgres';
+CREATE ROLE
+postgres=# CREATE DATABASE axum_postgres WITH OWNER = 'axum_postgres';
+CREATE DATABASE
+postgres=# \q
+
+
+
+ Administrator on DESKTOP-ABOBA at …\axum_crud_rest via  master
+   psql -U axum_postgres -p 4200
+Password for user axum_postgres:
+psql (17.0)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+axum_postgres=> CREATE TABLE tasks (
+axum_postgres(> task_id SERIAL PRIMARY KEY,
+axum_postgres(> name VARCHAR NOT NULL,
+axum_postgres(> priority INT
+axum_postgres(> );
+CREATE TABLE
+axum_postgres=> \q
+
+
+
+// optional
+rustfmt.toml {
+    tab_spaces = 2
+}
+
+
+
+
+
+
+
